@@ -1,0 +1,10 @@
+header {
+  background-color: black;
+}
+header p {
+  color: black;
+}
+body {
+  color: #666;
+  font_size: 15px;
+}
