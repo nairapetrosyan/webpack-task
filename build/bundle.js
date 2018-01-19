@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a4c9e2c2ec478fa1171b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "66a8e5cf55a9b7647809"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -732,33 +732,47 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_less__ = __webpack_require__("./source/style.less");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style2_less__ = __webpack_require__("./source/style2.less");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style2_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style2_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__storage__ = __webpack_require__("./source/storage.js");
+
+
 
 
 function factorial(n){
-    if(n===0)
+    if(n===1)
         return 1;
-    return n*factorial(n-1);
+    return +n*factorial(n-1);
+};
+console.log('aaaaa')
+function printfact()
+{
+    const h1 = document.getElementById('fact');
+    const n = document.getElementById('input').value;
+    if(n) {
+        console.log(typeof n)
+        __WEBPACK_IMPORTED_MODULE_0__storage__["a" /* default */].factorial = factorial(n);
+        h1.innerHTML = __WEBPACK_IMPORTED_MODULE_0__storage__["a" /* default */].factorial;
+    }
+    else {
+        h1.innerHTML = __WEBPACK_IMPORTED_MODULE_0__storage__["a" /* default */].factorial;
+    }
+}
+/* harmony default export */ __webpack_exports__["default"] = ({
+    printfact,
+    factorial
+});
+
+
+/***/ }),
+
+/***/ "./source/storage.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const storage = {
+    factorial: 1,
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (factorial);
-
-/***/ }),
-
-/***/ "./source/style.less":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./source/style2.less":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+/* harmony default export */ __webpack_exports__["a"] = (storage);
 
 /***/ })
 
